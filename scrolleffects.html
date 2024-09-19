@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Effects</title>
+    <style>
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .element {
+            animation: fadeOut 2s forwards;
+            animation-timeline: scroll();
+        }
+
+        .element {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+        }
+
+        .other-stuff {
+            height: 800px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="element"></div>
+    <div class="other-stuff"></div>
+
+
+</body>
+
+</html>
