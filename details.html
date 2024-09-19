@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details and summary</title>
+    <style>
+        details {
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 12px;
+            margin: 10px;
+            width: 200px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+        }
+
+        summary {
+            font-weight: bold;
+        }
+
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- here same name will be do exactly like radio buttons -->
+    <!-- only one of them open at a time -->
+    <details name="accordion">
+        <summary>Detail 1</summary>
+        Here is the Detail 1
+    </details>
+    <details name="accordion">
+        <summary>Detail 2</summary>
+        Here is the Detail 2
+    </details>
+    <details>
+        <summary>Detail 3</summary>
+        Here is the Detail 3
+    </details>
+
+</body>
+
+</html>
