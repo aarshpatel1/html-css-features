@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 5 Tags</title>
     <style>
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
         /* checks if there is blockquote tag available inside div */
         div:has(> blockquote) {
             border-radius: 4px;
@@ -39,7 +44,7 @@
             margin: auto;
         }
 
-        img {
+        figure img {
             max-width: 220px;
             max-height: 150px;
         }
@@ -51,30 +56,232 @@
             padding: 3px;
             text-align: center;
         }
+
+        abbr {
+            font-style: italic;
+            color: chocolate;
+        }
+
+        label {
+            padding-right: 10px;
+            font-size: 1rem;
+        }
+
+        ruby {
+            font-size: 1.5rem;
+            line-height: 2;
+        }
+
+        rt {
+            font-size: 0.75rem;
+            color: gray;
+            font-weight: bold;
+        }
+
+        a[href^='mailto']::before {
+            content: '📧 ';
+        }
+
+        a[href^='tel']::before {
+            content: '📞 ';
+        }
+
+        map+img {
+            display: block;
+            margin: 0 auto;
+            width: 260px;
+            height: 260px;
+        }
+
+        aside {
+            width: 40%;
+            padding-left: 0.5rem;
+            margin-left: 0.5rem;
+            float: right;
+            box-shadow: inset 5px 0 5px -5px #29627e;
+            font-style: italic;
+            color: #29627e;
+        }
+
+        aside>p {
+            margin: 0.5rem;
+        }
+
+        samp {
+            background-color: #ededed;
+            font-weight: bold;
+        }
+
+        legend {
+            background-color: #000;
+            color: #fff;
+            padding: 3px 6px;
+        }
+
+        input {
+            margin: 0.4rem;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>HTML 5 symentic tags</h1>
-    <div>
-        <blockquote cite="https://www.huxley.net/bnw/four.html">
+    <div class="container">
+
+        <h1>HTML 5 symentic tags</h1>
+        <p>This HTML page has examples of HTML 5 symentic tags.</p>
+
+
+        <h2>Blockquote Tag & Cite tag</h2>
+        <div>
+            <blockquote cite="https://www.huxley.net/bnw/four.html">
+                <p>
+                    Words can be like X-rays, if you use them properly—they'll go through anything. You read and you're
+                    pierced.
+                </p>
+            </blockquote>
+            <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+        </div>
+
+
+        <h2>Figure tag & Figurecaption Tag</h2>
+        <figure>
+            <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg"
+                alt="Elephant at sunset" />
+            <figcaption>An elephant at sunset</figcaption>
+        </figure>
+
+
+        <h2>Abbr Tag</h2>
+        <div>
             <p>
-                Words can be like X-rays, if you use them properly—they'll go through anything. You read and you're
-                pierced.
+                You can use <abbr title="Cascading Style Sheets">CSS</abbr> (Cascading Style Sheets) to style your <abbr
+                    title="HyperText Text Markup Language">HTML</abbr> (HyperText Markup Language). Using style sheets,
+                you
+                can keep your <abbr title="Cascading Style Sheets">CSS</abbr> presentation layer and <abbr
+                    title="HyperText Text Markup Language">HTML</abbr> content layer separate. This is called
+                "separation of
+                concerns."
             </p>
-        </blockquote>
-        <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+        </div>
+
+
+        <h2>Progress Tag</h2>
+        <label for="file">File progress:</label>
+        <progress id="file" max="100" value="70">70%</progress>
+
+        <h2>Ruby Tag</h2>
+        <ruby> 明日 <rp>(</rp>
+            <rt>Ashita</rt>
+            <rp>)</rp>
+        </ruby>
+
+
+        <h2>Address Tag</h2>
+        <p>Contact the author of this page:</p>
+        <address>
+            <a href="mailto:jim@example.com">jim@example.com</a><br />
+            <a href="tel:+14155550132">+1 (415) 555-0132</a>
+        </address>
+
+
+        <h2>Area Tag</h2>
+        <map name="infographic">
+            <area shape="poly" coords="129,0,260,95,129,138" href="https://developer.mozilla.org/docs/Web/HTTP"
+                target="_blank" alt="HTTP" />
+            <area shape="poly" coords="260,96,209,249,130,138" href="https://developer.mozilla.org/docs/Web/HTML"
+                target="_blank" alt="HTML" />
+            <area shape="poly" coords="209,249,49,249,130,139" href="https://developer.mozilla.org/docs/Web/JavaScript"
+                target="_blank" alt="JavaScript" />
+            <area shape="poly" coords="48,249,0,96,129,138" href="https://developer.mozilla.org/docs/Web/API"
+                target="_blank" alt="Web APIs" />
+            <area shape="poly" coords="0,95,128,0,128,137" href="https://developer.mozilla.org/docs/Web/CSS"
+                target="_blank" alt="CSS" />
+        </map>
+        <img usemap="#infographic" src="mdn-info.png" alt="MDN infographic" />
+
+
+        <h2>Aside Tag</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat sunt animi hic mollitia error eveniet
+            beatae reprehenderit laboriosam atque non quam iure officia, necessitatibus exercitationem, magnam quo nobis
+            voluptate architecto at repudiandae blanditiis! Voluptatum beatae inventore impedit placeat nisi dolorum,
+            sit eveniet culpa eos possimus magni maiores reprehenderit dolor ipsum?
+        </p>
+
+        <aside>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aperiam quidem eaque distinctio
+                laborum modi tempore aut non, nisi unde sequi natus atque repellendus, quod ducimus nulla explicabo
+                consectetur, perferendis porro maiores dicta aspernatur? Minus libero accusamus dolores modi, maiores
+                debitis facere! Facere eos laboriosam vitae, nam soluta quo magnam!</p>
+        </aside>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quas, nemo quia numquam esse accusantium
+            laboriosam ducimus eum, autem reiciendis qui, fugit sunt facilis temporibus! Cumque, molestias veritatis!
+            Eos ab necessitatibus veritatis id in porro, ex doloribus nam sequi consectetur fugit vitae quibusdam
+            doloremque cumque illo quo esse dolorem inventore aliquid deserunt itaque. Aliquid eligendi a possimus
+            ducimus autem, consectetur id neque magnam fugit quas qui sapiente! Ab praesentium id magni provident fugit
+            nisi blanditiis ipsa quod dolor reprehenderit illum odit aliquid, natus dolore. Corrupti cumque suscipit
+            dicta sunt repellat rerum dolorum expedita nam voluptatibus, necessitatibus dolorem beatae reprehenderit ab.
+        </p>
+
+
+        <h2>Audio Tag</h2>
+        <audio controls>
+            <source src="example_audio.mp3">
+        </audio>
+
+
+        <h2>Video Tag</h2>
+        <video controls width="250">
+            <source src="example_video.webm" type="video/webm" />
+            <!-- <source src="/media/cc0-videos/flower.mp4" type="video/mp4" /> -->
+        </video>
+
+
+        <h2>Samp Tag</h2>
+        <p>I was trying to boot my computer, but I got this hilarious message:</p>
+        <p>
+            <samp>Keyboard not found <br />Press F1 to continue</samp>
+        </p>
+
+
+        <h2>Picture Tag</h2>
+
+        <picture>
+            <!-- For large screens (1200px and above) -->
+            <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/1200x600.png?text=Large+Image">
+
+            <!-- For medium screens (768px to 1199px) -->
+            <source media="(min-width: 768px)" srcset="https://via.placeholder.com/768x400.png?text=Medium+Image">
+
+            <!-- For small screens (below 768px) -->
+            <source media="(max-width: 767px)" srcset="https://via.placeholder.com/400x300.png?text=Small+Image">
+
+            <!-- Fallback image if none of the conditions match -->
+            <img src="https://via.placeholder.com/600x400.png?text=Fallback+Image" alt="Responsive Image">
+        </picture>
+
+
+        <h2>Legend Tag</h2>
+        <fieldset>
+            <legend>Choose your favorite monster</legend>
+
+            <input type="radio" id="kraken" name="monster" value="K" />
+            <label for="kraken">Kraken</label><br />
+
+            <input type="radio" id="sasquatch" name="monster" value="S" />
+            <label for="sasquatch">Sasquatch</label><br />
+
+            <input type="radio" id="mothman" name="monster" value="M" />
+            <label for="mothman">Mothman</label>
+        </fieldset>
+
+
+        <!-- ins, kbd, iframe, hgroup, embed, dl dt dd, data, col colgroup, code, bdi, bdo, base, article tags are left to use in this example -->
+
     </div>
-
-
-    <figure>
-        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg"
-            alt="Elephant at sunset" />
-        <figcaption>An elephant at sunset</figcaption>
-    </figure>
-
-
 
 </body>
 
