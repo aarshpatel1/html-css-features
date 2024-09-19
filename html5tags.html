@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 5 Tags</title>
+    <style>
+        /* checks if there is blockquote tag available inside div */
+        div:has(> blockquote) {
+            border-radius: 4px;
+            background-color: #ededed;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* adds start quote before the p tag */
+        blockquote p::before {
+            content: '\201C';
+        }
+
+        /* adds end quote after the p tag */
+        blockquote p::after {
+            content: '\201D';
+        }
+
+        /* if p element immediatly follows the blockquote tag than this styling will be applied */
+        blockquote+p {
+            text-align: right;
+        }
+
+        figure {
+            border: thin #c0c0c0 solid;
+            display: flex;
+            flex-flow: column;
+            padding: 5px;
+            max-width: 220px;
+            margin: auto;
+        }
+
+        img {
+            max-width: 220px;
+            max-height: 150px;
+        }
+
+        figcaption {
+            background-color: #222;
+            color: #fff;
+            font: italic smaller sans-serif;
+            padding: 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML 5 symentic tags</h1>
+    <div>
+        <blockquote cite="https://www.huxley.net/bnw/four.html">
+            <p>
+                Words can be like X-rays, if you use them properly—they'll go through anything. You read and you're
+                pierced.
+            </p>
+        </blockquote>
+        <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+    </div>
+
+
+    <figure>
+        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg"
+            alt="Elephant at sunset" />
+        <figcaption>An elephant at sunset</figcaption>
+    </figure>
+
+
+
+</body>
+
+</html>
